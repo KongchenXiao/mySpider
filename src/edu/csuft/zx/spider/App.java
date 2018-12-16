@@ -43,19 +43,18 @@ public class App {
 			for(Element e :es) {
 				Film f=new Film();
 				//每一部影片
-				Element t=e.select(".title").first();
+				Element title=e.select(".title").first();
+				String id=e.select(".pic").text();
 				String num= e.select(".star span").last().text();
-				System.out.println(t.text()+","+num);
+				String rating=e.select(".rating_num").text();
+				String quote= e.select(".quote").text();
+				Elements poster=e.select(".pic img");
+				System.out.println(id+","+title.text()+","+rating+","+num+","+quote+","+poster);
 				
 //				f.id
 //				f.title
-				list.add(f);
+				list.add(f);			
 				
-//				Element t=e.select(".title").first();
-//				String s= e.select(".quote").text();
-//				System.out.println(t.text()+":"+s);
-				
-//				System.out.println(t.text());
 //				System.out.println(e.attr("src"));
 			}
 			
