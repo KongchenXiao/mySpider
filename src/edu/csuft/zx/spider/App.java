@@ -43,6 +43,7 @@ public class App {
 			for(Element e :es) {
 				Film f=new Film();
 				//每一部影片
+				//元素选择器 id选择器 类选择器
 //				Element title=e.select(".title").first();
 //				String info=e.select(".info").text();
 //				String id=e.select(".pic").text();
