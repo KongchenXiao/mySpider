@@ -43,16 +43,26 @@ public class App {
 			for(Element e :es) {
 				Film f=new Film();
 				//每一部影片
-				Element title=e.select(".title").first();
-				String id=e.select(".pic").text();
-				String num= e.select(".star span").last().text();
-				String rating=e.select(".rating_num").text();
-				String quote= e.select(".quote").text();
-				Elements poster=e.select(".pic img");
-				System.out.println(id+","+title.text()+","+rating+","+num+","+quote+","+poster);
+//				Element title=e.select(".title").first();
+//				String info=e.select(".info").text();
+//				String id=e.select(".pic").text();
+//				String num= e.select(".star span").last().text();
+//				String rating=e.select(".rating_num").text();
+//				String quote= e.select(".quote").text();
+//				Elements poster=e.select(".pic img");
+//				System.out.println(id+","+title.text()+","+rating+","+num+","+quote+","+poster);
 				
-//				f.id
-//				f.title
+				
+				f.id=Integer.parseInt(e.select(".pic em").first().text());
+				f.poster=e.select("img").first().attr("src");
+				f.info=e.select(".bd p").first().text();
+				f.title=e.select(".title").first().text();
+				f.rating=Double.parseDouble(e.select(".rating_num").first().text());
+				String num=e.select(".star span").last().text();
+				f.num=Integer.parseInt(num.substring(0,num.length()-3));
+				f.quote=e.select(".inq").first().text();
+				
+				System.out.println(f);
 				list.add(f);			
 				
 //				System.out.println(e.attr("src"));
